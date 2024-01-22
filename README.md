@@ -2,4 +2,5 @@
 
 ## using the app
 
-you need to install npm on your machine by this command ''
+you need to install the dependencies on your machine by this command 'npm i'
+to run the app run 'npm start'
