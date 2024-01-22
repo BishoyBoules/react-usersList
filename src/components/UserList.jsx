@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import UserDetails from './UserDetails'
+import React, {useState} from 'react'
+import User from './User'
 
-const UserList = (usersList) => {
+const UserList = () => {
     const [users, setUsers] = useState([])
     const [showDetails, setShowDetails] = useState([])
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -13,10 +13,7 @@ const UserList = (usersList) => {
     <ul id='usersList'>
         {users.map(user => (
             <li className='userName' key={user.id}>
-                <h1>{user.name}</h1>
-                <button onClick={() => setShowDetails(!showDetails[user.id])}>More Details</button>
-                <input type='checkbox' id={`user${user.id}`} onClick={() => console.log(user.id)}/>
-                {showDetails[user.id] && <UserDetails name={user.name} email={user.email} phone={user.phone}/>}
+                <User user={user}/>
             </li>
         ))}
     </ul>
