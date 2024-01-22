@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: aquamarine;
+  margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    width: 350px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+li {
+    border: 2px solid aquamarine;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 5px;
+}
+
+button{
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    background-color: aquamarine;
+    color: #282c34;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#usersList {
+    display: grid;
+    row-gap: 10px;
+    grid-template-columns: minmax(300px, 1fr);
+    list-style: none;
+}
