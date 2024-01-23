@@ -2,9 +2,8 @@ import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import AddUsersAction from '../actions/AddUserAction'
 
-
 const AddUserForm = () => {
-    const Users = useSelector(state => state.Users)
+    const usersList = useSelector(state => state.users)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [number, setNumber] = useState('')
@@ -12,7 +11,15 @@ const AddUserForm = () => {
 
     function handleSubmit (e) {
       e.preventDefault()
-      dispatch(AddUsersAction({name}))
+      dispatch(AddUsersAction({ name, email, number}))
+      fetch('https://jsonplaceholder.typicode.com/users', {
+        method: 'POST',
+        mode: 'cors',
+        body: JSON.stringify({name: name, email: email, number: number})
+      })
+      .then(res => res.json)
+      .then(data => console.log(data))
+      .catch(error => console.log(error))
     }
 
   return (

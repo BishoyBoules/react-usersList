@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const AddUserReducer = (state={users:[]}, action) => {
   switch(action.type){
     case 'add':

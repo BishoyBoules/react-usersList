@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import UserDetails from './UserDetails'
-import store from '../store'
 
 const User = ({user}) => {
     const [showDetails, setShowDetails] = useState(false)

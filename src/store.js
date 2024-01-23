@@ -3,11 +3,11 @@ import { thunk } from 'redux-thunk';
 import { AddUserReducer } from './reducers/AddUserReducer';
 
 const reducer = combineReducers({
-  Users: AddUserReducer,
+  users: AddUserReducer,
 })
 
 const initialState = {
-  Users: []
+  users: []
 }
 
 const middleware = [thunk]
