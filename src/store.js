@@ -1,4 +1,12 @@
-import {createStore} from 'redux';
-import reducer from './reducers/AddUserReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import AddUserReducer from './reducers/AddUserReducer';
+// import {logger} from 'redux-logger';
+import {thunk} from 'redux-thunk';
 
-export const store = createStore(reducer)
+const store = configureStore({
+  reducer: AddUserReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(thunk),
+});
+
+export default store

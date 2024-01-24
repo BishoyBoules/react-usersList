@@ -1,25 +1,14 @@
-const initialState = {
-  users: [],
-}
-
-const reducer = (state = initialState, action) => {
-  switch(action.type) {
-      case 'FETCH_REQUEST' :
-          return {
-              users: [...state],
-              error: ""
-          }
-      case 'FETCH_SUCCESS' :
-          return {
-              users: action.payload,
-              error: ""
-          }
-      case 'FETCH_FAILURE' :
-          return {
-              users: [],
-              error: action.payload
-          }    
+const AddUserReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'FETCH_USERS':
+      return action.payload;
+    case 'ADD_USER':
+      return [...state, action.payload];
+    case 'DELETE_USER':
+      return state.filter(user => user.id !== action.payload);
+    default:
+      return state;
   }
-}
+};
 
-export default reducer
+export default AddUserReducer;
