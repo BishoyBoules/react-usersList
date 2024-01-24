@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
-import { Provider } from 'react-redux'
 import UserList from './components/UserList';
 import AddUserForm from './components/AddUserForm';
-import store from './store'
 
 function App() {
   const api = "https://jsonplaceholder.typicode.com/users"
@@ -16,10 +14,8 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>Users List</header>
-      <Provider store={store}>
-        <AddUserForm/>
-        <UserList usersList={users}/>
-      </Provider>
+      <AddUserForm/>
+      <UserList users={users}/>
     </div>
   );
 }
